@@ -1,0 +1,95 @@
+.first{
+    background-image: url('https://thumbs.dreamstime.com/b/underwater-seamless-landscape-cartoon-background-game-design-63482202.jpg');
+    background-repeat: no-repeat;
+    color: #094247;
+    background-size: cover;
+    color: rgb(219, 99, 44);
+    font-family: 'Bangers', cursive;
+    font-size: 30px;
+}
+.second{
+    background-color: rgb(42, 42, 102);
+    background-size: cover;
+    color: rgb(219, 99, 44);
+    font-family: 'Bangers', cursive;
+    font-size: 30px;
+}
+.title {
+    padding-top: 0%;
+    font-weight: bold;
+    text-align: center;
+}
+.text {
+    text-align: center;
+    margin-right: 130px;
+    margin-top: 30px;
+}
+.buttonplay {
+    background-color: rgb(31, 53, 175);
+    color:  #cc6231;
+    margin-left: 520px;
+    margin-bottom: 200px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-top: 30px;
+    font-family: 'Bangers', cursive;
+    font-size: 20px;
+}
+canvas {
+    background-image: url('https://image.freepik.com/free-vector/cartoon-sea-underwater-nature_204595-69.jpg');
+    background-repeat: no-repeat;
+}
+.bounce {
+    text-align: center;
+    padding: 0%;
+}
+h1 span {
+    position: relative;
+    display: inline-block;
+    animation: animate 1.5s linear infinite;
+}
+@keyframes animate {
+    0% {
+        transform: translateY(0px);
+    }
+    10% {
+        transform: translateY(-30px);
+    }
+}
+.game{
+    text-align: center;
+    background-color: rgb(42, 42, 102);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 50px 100px;
+    width: 500px;
+}
+.game-container {
+    display: flex;
+    flex-direction: row;
+    justify-content:space-between;
+    font-size: 20px;
+}
+.home {
+    text-decoration: none;
+    color: rgb(219, 99, 44);
+}
+.buttonplay2 {
+    background-color: rgb(31, 53, 175);
+    color:  #cc6231;
+    font-family: 'Bangers', cursive;
+    font-size: 20px;
+    padding: 20px 50px;
+}
+.arrows {
+    height: 100px;
+    margin-left: 10px;
+}
+.audio {
+    width: 10px;
+    height: 10px;
+}
