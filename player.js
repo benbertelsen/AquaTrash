@@ -6,20 +6,19 @@ class Player {
         this.y = y;
         this.width = width;
         this.height = height;
+    }
 
+        draw() {
         const image = new Image();
 
-        image.src = 'https://mpng.subpng.com/20180219/qlw/kisspng-underwater-diving-scuba-diving-snorkeling-clip-art-scuba-diving-art-5a8b05d84fea64.5098774615190604403273.jpg'
+        image.src = 'http://placekitten.com/100/100'
         image.onload = () => {
             this.image = image;
             this.draw();
         }
-
+        context.drawImage(image, this.x, this.y, 90, 90);
     }
-
-    draw() {
-        context.drawImage(this.image, this.x, this.y, 90, 90);
-    }
+    
 
     moveLeft() {
         this.x -= 15;
@@ -42,7 +41,7 @@ class Player {
     
     document.addEventListener('keydown', (e) => {
         context.clearRect(0, 0, canvas.clientHeight, canvas.clientWidth);
-        
+
         switch(e.key) {
             case 'ArrowLeft':
             player1.moveLeft();
@@ -61,10 +60,9 @@ class Player {
             break; 
 }
         
-
         player1.draw();
-});
 
+});
 
 
 

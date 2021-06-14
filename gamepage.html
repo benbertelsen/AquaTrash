@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Acqua Game</title>
-    <script src="index.js" defer></script>
-    <script src="player.js" defer></script>
-    <script src="game.js" defer></script>
-    <script src="trash.js" defer></script>
+    <script type="text/javascript" src="index.js" defer></script>
+    <script type="text/javascript" src="player.js" defer></script>
+    <script type="text/javascript" src="trash.js" defer></script>
+    <script type="text/javascript" src="game.js" defer></script>
     <link rel="stylesheet" href="style.css">
     <style> @import url('https://fonts.googleapis.com/css2?family=Bangers&display=swap');</style>
 </head>
@@ -31,7 +31,7 @@
              </h1>
         </div>
         <div class="button">
-            <button class="buttonplay2" id="play" onclick="location.href='./gamepage.html'" type="button"> <i>start playing</i> </button>  
+            <button class="buttonplay2" id="start-button" onclick="location.href='./gamepage.html'" type="button"> <i>start playing</i> </button>  
         </div>
         <div class="info">
             <h1>use left and right <br>
@@ -42,7 +42,7 @@
             <h1>animals saved: 0</h1>
         </div>
     </div>
-       <div class="canvas-container">
+       <div class="canvas-container" id="game-board">
         <canvas id="canvas" width="800" height="800"></canvas>
     </div>
 </div>
