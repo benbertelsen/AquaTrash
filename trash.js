@@ -13,7 +13,7 @@ class Trash {
     this.speedY = 0;
     }
 
-    update() {
+    trashFill() {
         context.fillStyle = this.color;
         context.fillRect(this.x, this.y, this.width, this.height);
     }
