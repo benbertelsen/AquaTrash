@@ -7,11 +7,50 @@
     <script src="index.js" defer></script>
     <script src="player.js" defer></script>
     <link rel="stylesheet" href="style.css">
+    <style> @import url('https://fonts.googleapis.com/css2?family=Bangers&display=swap');</style>
 </head>
-<body>
+<audio class="audio" src="https://drive.google.com/file/d/1e-no73BnbkFVtg7tf_bsDDo6SzBjZ1bW/view?usp=sharing" controls></audio>
+<body class="second">
+
+    <nav><a class="home" href="./index.html">take me home</a></nav>
+<div class="game-container">
+
+    <div class="game">
+
+        <div class="title2">
+            <h1 class="bounce">
+                <span>A</span>
+                <span>C</span>
+                <span>Q</span>
+                <span>U</span>
+                <span>A</span>
+                <span>T</span>
+                <span>R</span>
+                <span>A</span>
+                <span>S</span>
+                <span>H</span>
+             </h1>
+        </div>
+        <div class="button">
+            <button class="buttonplay2" id="play" onclick="location.href='./gamepage.html'" type="button"> <i>start playing</i> </button>  
+        </div>
     
+        <div class="info">
+            <h1>use left and right <br>
+                arrow to play</h1>
+           <img class="arrows" src="https://p.kindpng.com/picc/s/355-3551319_yslife-wiki-left-and-right-arrow-keys-hd.png">
+            <h1>timer: 59</h1>
+            <h1>Score: 0</h1>
+            <h1>animals saved: 0</h1>
+        </div>
+
+    </div>
+
     
-    <canvas id="canvas" width="800" height="800"></canvas>
-       
+       <div class="canvas-container">
+        <canvas id="canvas" width="800" height="800"></canvas>
+    </div>
+
+</div>
 </body>
 </html>
