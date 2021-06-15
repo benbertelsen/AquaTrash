@@ -30,7 +30,8 @@ class Player {
 }
 
     
-document.addEventListener('keydown', (e) => {
+    
+    document.addEventListener('keydown', (e) => {
         context.clearRect(0, 0, canvas.clientHeight, canvas.clientWidth);
         switch(e.key) {
             case 'ArrowLeft':
@@ -46,6 +47,7 @@ document.addEventListener('keydown', (e) => {
                 currentDiver.moveDown();
             break; 
         }
+
 });
 
 

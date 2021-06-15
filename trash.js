@@ -15,6 +15,7 @@ class Trash {
         context.drawImage(theImage, this.x, this.y, this.width, this.height)
         // }
     }
+ 
 }
 
 
