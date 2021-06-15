@@ -37,10 +37,14 @@
     font-family: 'Bangers', cursive;
     font-size: 20px;
 }
+
 canvas {
     background-image: url('https://i.pinimg.com/originals/ef/de/5f/efde5f81f0ab092f39e8d5f9e67b446c.jpg');
     background-repeat: no-repeat;
+    
+    
 }
+
 .bounce {
     text-align: center;
     padding: 0%;
