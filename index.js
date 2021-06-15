@@ -1,14 +1,11 @@
 console.log("Javascript file connected to the game");
-
 const diveCanvas = document.getElementById('canvas');
 const context = canvas.getContext('2d');
-
 document.getElementById('game-board').style.display = 'none';
 document.getElementById('start-button').onclick = () => {
   document.getElementById('game-board').style.display = 'block';
   startGame();
 };
-
 let currentGame; 
 let currentDiver;
 
@@ -67,6 +64,38 @@ function updateCanvas() {
     requestAnimationFrame(updateCanvas);
 
 }
+function startTimer(duration, display) {
+  let timer = duration, minutes, seconds;
+  let countdown = setInterval(function () {
+      minutes = parseInt(timer / 60, 10);
+      seconds = parseInt(timer % 60, 10);
+      minutes = minutes < 10 ? "0" + minutes : minutes;
+      seconds = seconds < 10 ? "0" + seconds : seconds;
+      display.textContent = minutes + ":" + seconds;
+      if (--timer < 0) {
+        document.getElementById("game-board").style.display = "none";
+        currentGame.gameOver = true;
+        clearInterval(countdown);
+      }
+  }, 1000);
+}
+if (!currentGame.gameOver){
+  currentGame.animationId = requestAnimationFrame(updateCanvas);
+}
+//currentGame.animationID = requestAnimationFrame(updateCanvas);
+//requestAnimationFrame(updateCanvas);
+
+
+
+
+
+
+
+
+
+
+
+
 
 function startTimer(duration, display) {
   let timer = duration, minutes, seconds;

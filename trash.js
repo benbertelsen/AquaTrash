@@ -1,7 +1,5 @@
 //TRASH CLASS
-
 // const floatingTrash = [];
-
 class Trash {
     constructor(x, y, width, height, image) {
     this.x = x;
@@ -9,9 +7,7 @@ class Trash {
     this.width = width;
     this.height = height;
     this.image = image;
-
     }
-
     draw() {
         // selectImg = function() {
         const theImage = new Image();
@@ -21,3 +17,12 @@ class Trash {
     }
  
 }
+
+
+
+
+
+
+
+
+
