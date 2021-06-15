@@ -1,46 +1,27 @@
 //TRASH CLASS
-
 // const floatingTrash = [];
-
 class Trash {
-    constructor(x, y, width, height) {
+    constructor(x, y, width, height, image) {
     this.x = x;
     this.y = y;
     this.width = width;
     this.height = height;
+    this.image = image;
     }
-
     draw() {
-        context.fillStyle = 'orange'
-        context.fillRect(this.x, this.y, this.width, this.height);
+        // selectImg = function() {
+        const theImage = new Image();
+        theImage.src = this.image;
+        context.drawImage(theImage, this.x, this.y, this.width, this.height)
+        // }
     }
-
-    // newPos() {
-    //     this.x += this.speedX;
-    //     this.y += this.speedY;
-    // }
-
-    // left() {
-    //     return this.x;
-    // };
-
-    // right() {
-    //     return this.x + this.width;
-    // }
-
-    // top() {
-    //     return this.y;
-    // }
-
-    // bottom() {
-    //     return this.y + this.height;
-    // }
-
-    // crashWith(component) {
-    //     return !(this.bottom() < component.top() ||
-    //     this.top() > component.bottom() ||
-    //     this.right() < component.left() ||
-    //     this.left() > component.right())
-    // }
- 
 }
+
+
+
+
+
+
+
+
+
