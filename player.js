@@ -1,3 +1,5 @@
+//PLAYER CLASS
+
 class Player {
     constructor (x,y, width, height) {
         this.x = x;
@@ -7,7 +9,7 @@ class Player {
 
         const image = new Image();
 
-        image.src = 'https://lh3.googleusercontent.com/proxy/ZH_lSZJMAzF5kXF55lghRGWkd_irlMk_7WB45f5d1oztaxa8q-Fys7Wczh4JaaK7jWLdg0c78Ihftai_FgCsgz751k1fch828aqV99p6NOZ9'
+        image.src = 'https://mpng.subpng.com/20180219/qlw/kisspng-underwater-diving-scuba-diving-snorkeling-clip-art-scuba-diving-art-5a8b05d84fea64.5098774615190604403273.jpg'
         image.onload = () => {
             this.image = image;
             this.draw();
@@ -16,23 +18,31 @@ class Player {
     }
 
     draw() {
-        context.drawImage(this.image, this.x, this.y, 90,90);
+        context.drawImage(this.image, this.x, this.y, 90, 90);
     }
 
     moveLeft() {
-        this.x -= 25;
+        this.x -= 15;
     }
 
     moveRight() {
-        this.x +=25;
+        this.x += 15;
     }
 
+    moveUp() {
+        this.y -= 15;
+    }
+
+    moveDown() {
+        this.y += 15;
+    }
+}
     
-    const player1 = new Player(350,700);
+    const player1 = new Player(350, 700);
     
     document.addEventListener('keydown', (e) => {
-
-
+        context.clearRect(0, 0, canvas.clientHeight, canvas.clientWidth);
+        
         switch(e.key) {
             case 'ArrowLeft':
             player1.moveLeft();
@@ -41,10 +51,19 @@ class Player {
             case 'ArrowRight':
             player1.moveRight();
             break; 
+
+            case 'ArrowUp':
+            player1.moveUp();
+            break;
+    
+            case 'ArrowDown':
+            player1.moveDown();
+            break; 
 }
-        context.clearRect(this.x, this.y, this.height, this.width);
-    }
-}
+        
+
+        player1.draw();
+});
 
 
 
