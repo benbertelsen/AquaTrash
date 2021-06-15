@@ -11,23 +11,24 @@ document.getElementById('start-button').onclick = () => {
 };
 
 let currentGame; 
+let currentDiver;
 
 function startGame() { //this is only called once
-  let currentGame = new Game();
-  let currentDiver = new Player(); //Assign a new diver to the new game
-  currentGame.player1 = currentDiver;
-  currentGame.player1.draw(); //calling a function that lives Player class
+  currentGame = new Game();
+  currentDiver = new Player(350,700); //Assign a new diver to the new game
+  currentGame.player = currentDiver;
+  currentGame.player.draw(); //calling a function that lives Player class
   updateCanvas();
 }
 
 function updateCanvas() {
-context.clearRect(0, 0, diveCanvas.clientWidth, diveCanvas.clientHeight);
-currentGame.player1.draw();
-currentGame.floatingTrashFrequency++;
+  context.clearRect(0, 0, diveCanvas.clientWidth, diveCanvas.clientHeight);
+  currentGame.player.draw();
+  currentGame.floatingTrashFrequency++;
 
 if (currentGame.floatingTrashFrequency % 100 === 1) { //..IF this happens, THEN instantiate new trash obstacles and push to array
-    const randomTrashPosX = getRandomInt(100); //hack solution here to troubleshoot
-    const randomTrashPosY = 50;
+    const randomTrashPosX = Math.floor(Math.random() * 450); //hack solution here to troubleshoot
+    const randomTrashPosY = 0;
     const randomWidth = 30;
     const randomHeight = 30;
 
@@ -41,9 +42,9 @@ if (currentGame.floatingTrashFrequency % 100 === 1) { //..IF this happens, THEN 
     currentGame.floatingTrash.push(fallingTrash);
     }
 
-    currentGame.floatingTrash.forEach((floatingTrash, i) => { //making sure the obstacles fall down the y-axis all the time
-        floatingTrash.y += 1;
-        floatingTrash.draw();
+    currentGame.floatingTrash.forEach((trash, i) => { //making sure the obstacles fall down the y-axis all the time
+        trash.y += 1;
+        trash.draw();
     });
     requestAnimationFrame(updateCanvas);
 }

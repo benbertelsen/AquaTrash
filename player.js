@@ -1,22 +1,21 @@
 //PLAYER CLASS
 
 class Player {
-    constructor (x,y, width, height) {
+    constructor (x,y) {
         this.x = x;
         this.y = y;
-        this.width = width;
-        this.height = height;
+        this.width = 90;
+        this.height = 90;
     }
 
         draw() {
         const image = new Image();
-
         image.src = 'http://placekitten.com/100/100'
-        image.onload = () => {
-            this.image = image;
-            this.draw();
-        }
-        context.drawImage(image, this.x, this.y, 90, 90);
+        // image.onload = () => {
+        //     this.image = image;
+        //     this.draw();
+        // }
+        context.drawImage(image, this.x, this.y, this.width, this.height);
     }
     
 
@@ -37,30 +36,27 @@ class Player {
     }
 }
     
-    const player1 = new Player(350, 700);
     
     document.addEventListener('keydown', (e) => {
         context.clearRect(0, 0, canvas.clientHeight, canvas.clientWidth);
 
         switch(e.key) {
             case 'ArrowLeft':
-            player1.moveLeft();
+                currentDiver.moveLeft();
             break;
 
             case 'ArrowRight':
-            player1.moveRight();
+                currentDiver.moveRight();
             break; 
 
             case 'ArrowUp':
-            player1.moveUp();
+                currentDiver.moveUp();
             break;
     
             case 'ArrowDown':
-            player1.moveDown();
+                currentDiver.moveDown();
             break; 
-}
-        
-        player1.draw();
+        }
 
 });
 

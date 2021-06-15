@@ -2,7 +2,7 @@
 
 class Game {
     constructor() {
-        this.player1 = {};
+        this.player = {};
         this.floatingTrash = [];
         this.score = 0;
         this.floatingTrashFrequency = 0;
