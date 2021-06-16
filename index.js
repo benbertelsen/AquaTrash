@@ -1,10 +1,13 @@
 console.log("Javascript file connected to the game");
+
 const diveCanvas = document.getElementById('canvas');
 const context = canvas.getContext('2d');
+
 document.getElementById('game-board').style.display = 'none';
 document.getElementById('start-button').onclick = () => {
   document.getElementById('game-board').style.display = 'block';
   startGame();
+
 };
 let currentGame; 
 let currentDiver;
@@ -29,8 +32,18 @@ function updateCanvas() {
   currentGame.player.draw();
   currentGame.floatingTrashFrequency++;
 
-  const imgArray = ["./image/computerkitten.png", "./image/pizza.png", "./image/plastic_bag.png", "./image/scissor.png"];
-
+  const imgArray = [
+    "./image/computerkitten.png", 
+    "./image/pizza.png", 
+    "./image/plastic_bag.png", 
+    "./image/scissor.png", 
+    "./image/bottle.png", 
+    "./image/alien.png", 
+    "./image/landmover.png", 
+    "./image/pirate.png", 
+    "./image/tree.png", 
+    "./image/plastic.png", 
+    "./image/cycle.png"];
 
   if (currentGame.floatingTrashFrequency % 100 === 1) { //..IF this happens, THEN instantiate new trash obstacles and push to array
     const randomTrashPosX = Math.floor(Math.random() * 450); //hack solution here to troubleshoot
