@@ -13,6 +13,7 @@ document.getElementById('game-board').style.display = 'block';
 let currentGame; 
 let currentDiver;
 
+
 function startGame() { //this is only called once
   currentGame = new Game();
   currentDiver = new Player(250,600); //Assign a new diver to the new game
@@ -100,7 +101,6 @@ function updateCanvas() {
 
 }
 
-
 function startTimer(duration, display) {
   let timer = duration, minutes, seconds;
   let countdown = setInterval(function () {
@@ -112,10 +112,13 @@ function startTimer(duration, display) {
       if (--timer < 0) {
         document.getElementById("game-board").style.display = "none";
         document.querySelector(".gameOverMessage").style.display = "block";
+        
 
         currentGame.gameOver = true;
         clearInterval(countdown);
       }
+
+
   }, 1000);
 }
 
@@ -124,5 +127,10 @@ if (!currentGame.gameOver){
 } 
 //currentGame.animationID = requestAnimationFrame(updateCanvas);
 //requestAnimationFrame(updateCanvas);
+
+
+
+
+
 
 

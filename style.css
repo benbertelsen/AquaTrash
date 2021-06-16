@@ -23,11 +23,12 @@
     text-align: center;
     margin-right: 130px;
     margin-top: 30px;
+    font-size: 30px;
 }
 .buttonplay {
     background-color: rgb(31, 53, 175);
     color:  #cc6231;
-    margin-left: 520px;
+    margin-left: 590px;
     margin-bottom: 200px;
     padding-top: 30px;
     padding-bottom: 30px;
@@ -74,13 +75,15 @@ h1 span {
 .game-container {
     display: flex;
     flex-direction: row;
-    font-size: 20px;
     margin-left: 40px;
+    font-size: 20px;
 }
+
 .home {
     text-decoration: none;
     color: rgb(219, 99, 44);
 }
+
 .buttonplay2 {
     background-color: rgb(31, 53, 175);
     color:  #cc6231;
@@ -88,6 +91,7 @@ h1 span {
     font-size: 20px;
     padding: 20px 50px;
 }
+
 .arrows {
     height: 100px;
     margin-left: 10px;
@@ -127,4 +131,27 @@ h1 span {
 #fish-column img {
     width: 180px;
     height: 180px;
+}
+.turtle {
+    height: 80px;
+}
+
+.dolphin {
+    height: 80px;
+}
+
+.corals {
+    height: 80px;
+}
+
+.changes {
+    font-size: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.mydolphin {
+    width: 80px;
+    margin-left: 400px;
 }
