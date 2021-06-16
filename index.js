@@ -65,7 +65,7 @@ function updateCanvas() {
     currentGame.floatingTrash.push(fallingTrash);
     }
     
-    fishArr = ["./fish_images/fish2.jpeg", "./fish_images/turtle1.jpeg", "./fish_images/turtle2.jpeg"];
+    fishArr = ["../AquaTrash/fish_images/corals.png", "../AquaTrash/fish_images/Screenshot 2021-06-16 at 12.36.25.png", "../AquaTrash/fish_images/Screenshot 2021-06-16 at 12.46.37.png"];
 
     currentGame.floatingTrash.forEach((trash, i) => { //making sure the obstacles fall down the y-axis all the time
         trash.y += 1;
@@ -82,15 +82,15 @@ function updateCanvas() {
           document.querySelector(".my-animals span").innerHTML = currentGame.score;
 
         if (currentGame.score % 3 === 0){
-          document.getElementById("fish1").src = "https://placekitten.com/200/300";
+          document.getElementById("fish1").src = fishArr[0];
         }
 
         if (currentGame.score % 4 === 0){
-          document.getElementById("fish2").src = "https://placekitten.com/200/300";
+          document.getElementById("fish2").src = fishArr[1];
         }
 
         if (currentGame.score % 5 === 0){
-          document.getElementById("fish3").src = "https://placekitten.com/200/300";
+          document.getElementById("fish3").src = fishArr[2];
         }
           
         }
