@@ -3,12 +3,12 @@ class Player {
     constructor (x,y) {
         this.x = x;
         this.y = y;
-        this.width = 90;
+        this.width = 120;
         this.height = 90;
     }
         draw() {
         const image = new Image();
-        image.src = 'https://image.shutterstock.com/shutterstock/photos/1231718053/display_1500/stock-vector-male-scuba-diver-under-water-undersea-sea-surfing-tourist-man-boy-tourist-diving-set-1231718053.jpg'
+        image.src = "./image/scuba_diver.png"
         // image.onload = () => {
         //     this.image = image;
         //     this.draw();
