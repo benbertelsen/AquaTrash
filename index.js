@@ -74,39 +74,8 @@ function startTimer(duration, display) {
       display.textContent = minutes + ":" + seconds;
       if (--timer < 0) {
         document.getElementById("game-board").style.display = "none";
-        currentGame.gameOver = true;
-        clearInterval(countdown);
-      }
-  }, 1000);
-}
-if (!currentGame.gameOver){
-  currentGame.animationId = requestAnimationFrame(updateCanvas);
-}
-//currentGame.animationID = requestAnimationFrame(updateCanvas);
-//requestAnimationFrame(updateCanvas);
+        document.querySelector(".gameOverMessage").style.display = "block";
 
-
-
-
-
-
-
-
-
-
-
-
-
-function startTimer(duration, display) {
-  let timer = duration, minutes, seconds;
-  let countdown = setInterval(function () {
-      minutes = parseInt(timer / 60, 10);
-      seconds = parseInt(timer % 60, 10);
-      minutes = minutes < 10 ? "0" + minutes : minutes;
-      seconds = seconds < 10 ? "0" + seconds : seconds;
-      display.textContent = minutes + ":" + seconds;
-      if (--timer < 0) {
-        document.getElementById("game-board").style.display = "none";
         currentGame.gameOver = true;
         clearInterval(countdown);
       }
@@ -115,7 +84,8 @@ function startTimer(duration, display) {
 
 if (!currentGame.gameOver){
   currentGame.animationId = requestAnimationFrame(updateCanvas);
-}
-
+} 
 //currentGame.animationID = requestAnimationFrame(updateCanvas);
 //requestAnimationFrame(updateCanvas);
+
+
