@@ -82,7 +82,7 @@ function updateCanvas() {
           document.querySelector(".my-animals span").innerHTML = currentGame.score;
 
         if (currentGame.score % 3 === 0){
-          document.getElementById("fish1").src = "https://placekitten.com/200/300";
+          document.getElementById("fish1").src = fishArr[0];
         }
 
         if (currentGame.score % 4 === 0){
