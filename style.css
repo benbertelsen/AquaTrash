@@ -41,8 +41,7 @@
 canvas {
     background-image: url('https://i.pinimg.com/originals/ef/de/5f/efde5f81f0ab092f39e8d5f9e67b446c.jpg');
     background-repeat: no-repeat;
-    
-    
+    width: 700px,
 }
 
 .bounce {
@@ -69,14 +68,14 @@ h1 span {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    margin: 50px 100px;
-    width: 500px;
+    margin: 50px 10px;
+    width: 400px;
 }
 .game-container {
     display: flex;
     flex-direction: row;
-    justify-content:space-between;
     font-size: 20px;
+    margin-left: 40px;
 }
 .home {
     text-decoration: none;
@@ -92,6 +91,8 @@ h1 span {
 .arrows {
     height: 100px;
     margin-left: 10px;
+    margin-bottom: 20px;
+    margin-top: 10px;
 }
 
 
@@ -107,4 +108,23 @@ h1 span {
     font-size: 20px;
     margin-top: 100px;
     margin-right: 250px;
+}
+
+#mid-section {
+    width: 700px;
+}
+
+#right-side-sect {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    height: 700px;
+    width: 250px;
+    margin-left: 30px;
+    margin-right: 30px;
+}
+
+#fish-column img {
+    width: 180px;
+    height: 180px;
 }

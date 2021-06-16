@@ -4,7 +4,7 @@ const diveCanvas = document.getElementById('canvas');
 const context = canvas.getContext('2d');
 
 document.querySelector(".gameOverMessage").style.display = "none";
-document.getElementById('game-board').style.display = 'none';
+document.querySelector(".animalsSaved").style.display = "none";
 document.getElementById('start-button').onclick = () => {
 document.getElementById('game-board').style.display = 'block';
   startGame();
@@ -15,7 +15,7 @@ let currentDiver;
 
 function startGame() { //this is only called once
   currentGame = new Game();
-  currentDiver = new Player(350,700); //Assign a new diver to the new game
+  currentDiver = new Player(250,600); //Assign a new diver to the new game
   currentGame.player = currentDiver;
   currentGame.player.draw(); //calling a function that lives Player class
   currentGame.displayCount();
@@ -64,6 +64,8 @@ function updateCanvas() {
     currentGame.floatingTrash.push(fallingTrash);
     }
     
+    fishArr = ["./fish_images/fish2.jpeg", "./fish_images/turtle1.jpeg", "./fish_images/turtle2.jpeg"];
+
     currentGame.floatingTrash.forEach((trash, i) => { //making sure the obstacles fall down the y-axis all the time
         trash.y += 1;
         trash.draw();
@@ -72,12 +74,33 @@ function updateCanvas() {
           currentGame.score  += 1;
           currentGame.floatingTrash.splice(i, 1);
           document.querySelector(".score").innerHTML = currentGame.score;
+        
+        if (currentGame.score % 2 === 0){
+          currentGame.animalSaved ++;
+          document.querySelector(".animalsSaved").style.display = "block";
+          document.querySelector(".my-animals span").innerHTML = currentGame.score;
+
+        if (currentGame.score % 3 === 0){
+          document.getElementById("fish1").src = "https://placekitten.com/200/300";
         }
+
+        if (currentGame.score % 4 === 0){
+          document.getElementById("fish2").src = "https://placekitten.com/200/300";
+        }
+
+        if (currentGame.score % 5 === 0){
+          document.getElementById("fish3").src = "https://placekitten.com/200/300";
+        }
+          
+        }
+      }
 
     });
     requestAnimationFrame(updateCanvas);
 
 }
+
+
 function startTimer(duration, display) {
   let timer = duration, minutes, seconds;
   let countdown = setInterval(function () {
