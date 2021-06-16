@@ -5,6 +5,7 @@ class Game {
         this.player = {};
         this.floatingTrash = [];
         this.score = 0;
+        this.animalSaved = 0;
         this.floatingTrashFrequency = 0;
         this.animationID = null; //same things as the frames in the other games we have created
         // this.animationID = null; //NB: we'll see this later. We don't have any animation, before the game starts.
@@ -15,5 +16,8 @@ class Game {
             display = document.querySelector('.timer');
         startTimer(seconds, display);
       };
+
+
+
 }
 

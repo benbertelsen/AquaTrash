@@ -23,11 +23,12 @@
     text-align: center;
     margin-right: 130px;
     margin-top: 30px;
+    font-size: 30px;
 }
 .buttonplay {
     background-color: rgb(31, 53, 175);
     color:  #cc6231;
-    margin-left: 520px;
+    margin-left: 590px;
     margin-bottom: 200px;
     padding-top: 30px;
     padding-bottom: 30px;
@@ -69,13 +70,13 @@ h1 span {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    margin: 50px 100px;
-    width: 500px;
+    margin: 50px 10px;
+    width: 400px;
 }
 .game-container {
     display: flex;
     flex-direction: row;
-    justify-content:space-between;
+    margin-left: 40px;
     font-size: 20px;
 }
 .home {
@@ -107,4 +108,28 @@ h1 span {
     font-size: 20px;
     margin-top: 100px;
     margin-right: 250px;
+}
+
+.turtle {
+    height: 80px;
+}
+
+.dolphin {
+    height: 80px;
+}
+
+.corals {
+    height: 80px;
+}
+
+.changes {
+    font-size: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.mydolphin {
+    width: 80px;
+    margin-left: 400px;
 }

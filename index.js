@@ -4,6 +4,7 @@ const diveCanvas = document.getElementById('canvas');
 const context = canvas.getContext('2d');
 
 document.querySelector(".gameOverMessage").style.display = "none";
+document.querySelector(".animalsSaved").style.display = "none";
 document.getElementById('game-board').style.display = 'none';
 document.getElementById('start-button').onclick = () => {
 document.getElementById('game-board').style.display = 'block';
@@ -13,9 +14,10 @@ document.getElementById('game-board').style.display = 'block';
 let currentGame; 
 let currentDiver;
 
+
 function startGame() { //this is only called once
   currentGame = new Game();
-  currentDiver = new Player(350,700); //Assign a new diver to the new game
+  currentDiver = new Player(250,600); //Assign a new diver to the new game
   currentGame.player = currentDiver;
   currentGame.player.draw(); //calling a function that lives Player class
   currentGame.displayCount();
@@ -71,13 +73,22 @@ function updateCanvas() {
         if (detectCollision(trash)) {
           currentGame.score  += 1;
           currentGame.floatingTrash.splice(i, 1);
-          document.querySelector(".score").innerHTML = currentGame.score;
+          document.querySelector(".score span").innerHTML = currentGame.score;
+
+          if (currentGame.score % 4 === 0){
+            currentGame.animalSaved ++;
+            document.querySelector(".animalsSaved").style.display = "block";
+            document.querySelector(".my-animals span").innerHTML = currentGame.animalSaved;
+            
+          }
+
         }
 
     });
     requestAnimationFrame(updateCanvas);
 
 }
+
 function startTimer(duration, display) {
   let timer = duration, minutes, seconds;
   let countdown = setInterval(function () {
@@ -89,10 +100,13 @@ function startTimer(duration, display) {
       if (--timer < 0) {
         document.getElementById("game-board").style.display = "none";
         document.querySelector(".gameOverMessage").style.display = "block";
+        
 
         currentGame.gameOver = true;
         clearInterval(countdown);
       }
+
+
   }, 1000);
 }
 
@@ -101,5 +115,10 @@ if (!currentGame.gameOver){
 } 
 //currentGame.animationID = requestAnimationFrame(updateCanvas);
 //requestAnimationFrame(updateCanvas);
+
+
+
+
+
 
 
