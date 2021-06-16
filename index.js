@@ -3,9 +3,10 @@ console.log("Javascript file connected to the game");
 const diveCanvas = document.getElementById('canvas');
 const context = canvas.getContext('2d');
 
+document.querySelector(".gameOverMessage").style.display = "none";
 document.getElementById('game-board').style.display = 'none';
 document.getElementById('start-button').onclick = () => {
-  document.getElementById('game-board').style.display = 'block';
+document.getElementById('game-board').style.display = 'block';
   startGame();
 
 };
