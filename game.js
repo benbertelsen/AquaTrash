@@ -12,7 +12,7 @@ class Game {
          this.gameOver = false;
     }
     displayCount() {
-        let seconds = 1000 * 1,
+        let seconds = 59 * 1,
             display = document.querySelector('.timer');
         startTimer(seconds, display);
     }; 

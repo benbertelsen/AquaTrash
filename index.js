@@ -5,6 +5,13 @@ const context = canvas.getContext('2d');
 
 document.querySelector(".gameOverMessage").style.display = "none";
 document.querySelector(".animalsSaved").style.display = "none";
+document.getElementById("fish1").style.display = "none"
+document.getElementById("fish2").style.display = "none"
+document.getElementById("fish3").style.display = "none"
+document.getElementById("fish4").style.display = "none"
+document.getElementById("fish5").style.display = "none"
+document.getElementById("fish6").style.display = "none"
+
 document.getElementById('start-button').onclick = () => {
 document.getElementById('game-board').style.display = 'block';
   startGame();
@@ -31,6 +38,7 @@ function detectCollision(trash) {
 }
 function updateCanvas() {
   context.clearRect(0, 0, diveCanvas.clientWidth, diveCanvas.clientHeight);
+  currentGame.player.newPos();
   currentGame.player.draw();
   currentGame.floatingTrashFrequency++;
 
@@ -65,7 +73,16 @@ function updateCanvas() {
     currentGame.floatingTrash.push(fallingTrash);
     }
     
-    fishArr = ["./fish_images/fish2.jpeg", "./fish_images/turtle1.jpeg", "./fish_images/turtle2.jpeg"];
+    fishArr = [
+      "./fish_images/corals.png", 
+      "./fish_images/Screenshot 2021-06-16 at 12.36.25.png", 
+      "./fish_images/Screenshot 2021-06-16 at 12.46.37.png",
+      "./fish_images/crayfish1.png",
+      "./fish_images/turtle1.png",
+      "./fish_images/turtle2.png"
+    ];
+
+    // const randomFishImage = fishArr[Math.floor(Math.random() * fishArr.length)]
 
     currentGame.floatingTrash.forEach((trash, i) => { //making sure the obstacles fall down the y-axis all the time
         trash.y += 1;
@@ -76,27 +93,45 @@ function updateCanvas() {
           currentGame.floatingTrash.splice(i, 1);
           document.querySelector(".score").innerHTML = currentGame.score;
         
-        if (currentGame.score % 2 === 0){
+        if (currentGame.score >= 5){
           currentGame.animalSaved ++;
           document.querySelector(".animalsSaved").style.display = "block";
-          document.querySelector(".my-animals span").innerHTML = currentGame.score;
-
-        if (currentGame.score % 3 === 0){
+          document.getElementById("fish1").style.display = "block";
           document.getElementById("fish1").src = fishArr[0];
         }
+          // document.querySelector(".my-animals span").innerHTML = currentGame.score;
 
-        if (currentGame.score % 4 === 0){
-          document.getElementById("fish2").src = "https://placekitten.com/200/300";
+        if (currentGame.score >= 10){
+          document.getElementById("fish2").src = fishArr[1];
+          document.getElementById("fish2").style.display = "block";
         }
 
-        if (currentGame.score % 5 === 0){
-          document.getElementById("fish3").src = "https://placekitten.com/200/300";
+        if (currentGame.score >= 15){
+          document.getElementById("fish3").src = fishArr[2];
+          document.getElementById("fish3").style.display = "block";
+        }
+
+        if (currentGame.score >= 20){
+          document.getElementById("fish4").src = fishArr[3];
+          document.getElementById("fish4").style.display = "block";
+        }
+
+        if (currentGame.score >= 25){
+          document.getElementById("fish5").src = fishArr[4];
+          document.getElementById("fish5").style.display = "block";
+        }
+
+        if (currentGame.score >= 30){
+          document.getElementById("fish6").src = fishArr[5];
+          document.getElementById("fish6").style.display = "block";
         }
           
-        }
+      
+      // }
       }
+    }
+    );
 
-    });
     requestAnimationFrame(updateCanvas);
 
 }
