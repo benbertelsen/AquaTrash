@@ -21,6 +21,12 @@ class Player {
     newPos() {
         this.x += this.speedX;
         this.y += this.speedY;
+        if (this.y + this.height > canvas.height  || this.y + this.height < 0) {
+            this.speedY *= -0.25;
+          }
+          if (this.x + this.width > canvas.width || this.x + this.width < 100) {
+            this.speedX *= -0.25;
+          }
     }
 
     // moveLeft() {
@@ -43,16 +49,16 @@ class Player {
         context.clearRect(0, 0, canvas.clientHeight, canvas.clientWidth);
         switch(e.key) {
             case 'ArrowLeft':
-                currentGame.player.speedX -= 0.25
+                currentGame.player.speedX -= 0.20
             break;
             case 'ArrowRight':
-                currentGame.player.speedX += 0.25
+                currentGame.player.speedX += 0.20
             break; 
             case 'ArrowUp':
-                currentGame.player.speedY -= 0.25
+                currentGame.player.speedY -= 0.20
             break;
             case 'ArrowDown':
-                currentGame.player.speedY += 0.25
+                currentGame.player.speedY += 0.20
             break; 
         }
 
