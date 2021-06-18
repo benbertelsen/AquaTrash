@@ -13,9 +13,13 @@ document.getElementById("fish5").style.display = "none"
 document.getElementById("fish6").style.display = "none"
 
 document.getElementById('start-button').onclick = () => {
-document.getElementById('game-board').style.display = 'block';
-  startGame();
 
+  let newStyle = document.getElementById("start-button");
+  newStyle.style["background-color"] = "orange";
+  newStyle.style["color"] = "white";
+  
+  document.getElementById('game-board').style.display = 'block';
+  startGame();
 };
 let currentGame; 
 let currentDiver;
