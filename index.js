@@ -17,6 +17,11 @@ document.getElementById('start-button').onclick = () => {
   let newStyle = document.getElementById("start-button");
   newStyle.style["background-color"] = "orange";
   newStyle.style["color"] = "white";
+
+  if (newStyle.value == "Start") {
+    newStyle.value = "Clicked";
+    newStyle.innerHTML = "Catch the trash!";
+    }
   
   document.getElementById('game-board').style.display = 'block';
   startGame();
